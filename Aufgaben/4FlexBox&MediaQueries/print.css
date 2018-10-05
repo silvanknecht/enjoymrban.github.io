@@ -22,25 +22,10 @@ body h1,
     text-align: left;
 }
 
-#header {
-    background-color: tomato;
+#header,#studierende,#navigation,#kontakt,#footer {
+    border: 1px black solid;
 }
 
-#studierende {
-    background-color: deepskyblue;
-}
-
-#navigation {
-    background-color: gold;
-}
-
-#kontakt {
-    background-color: hotpink;
-}
-
-#footer {
-    background-color: lightgreen;
-}
 
 @media (min-width:600px) {
     .container {
@@ -72,20 +57,6 @@ body h1,
         order: 2;
     }
 
-    #studierende {
-        animation: changebackground 3s;
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes changebackground {
-        from {
-            background-color: deepskyblue;
-        }
-
-        to {
-            background-color: white;
-        }
-
-    }
+    
 }
 
