@@ -51,7 +51,7 @@ body h1,
     .item:nth-of-type(1) {
         flex-grow: 1;
         order: 3;
-        min-width: 100%;
+        min-width: 100%; /*Da das Element wegen Flexbox  auf einmal Platzt hat*/
     }
 
     .item:nth-of-type(2) {

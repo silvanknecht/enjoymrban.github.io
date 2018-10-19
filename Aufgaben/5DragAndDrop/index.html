@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag And Drop</title>
+    <style>
+        .fill {
+            background-image: url('http://source.unsplash.com/random/150x150');
+            position: relative;
+            height: 150px;
+            width: 150px;
+
+            cursor: pointer;
+        }
+
+        .cont {
+            width: 150px;
+            height: 150px;
+            padding: 5px;
+            border: 1px solid #aaaaaa;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont" id="cont1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="cont" id="cont2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="picture1" class="fill" draggable="true" ondragstart="dragStart(event)" ondragover="dragging(event)"
+            ondrop="drop(event)"></div>
+    </div>
+
+
+
+    <script>
+
+        function dragStart(event) {
+            event.dataTransfer.setData("class", event.target.id);
+            console.log("DragStart");
+        }
+
+        function dragging(event) {
+            event.preventDefault(); // Unterdrücken von Browserspezifischen funktionen
+            console.log("Dragging");
+        }
+
+        function drop(event) {
+            event.preventDefault(); // Unterdrücken von Browserspezifischen funktionen
+            let id = event.dataTransfer.getData("class");
+            console.log("Droped has Id" + id);
+            event.target.appendChild(document.getElementById(id));
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+            console.log("drop");
+        }
+
+    </script>
+</body>
+
+</html>
