@@ -11,7 +11,7 @@ self.addEventListener('install', event => {
         './images/newspaper.svg',
         './css/site.css',
         './header.html',
-        '/footer.html',
+        './footer.html',
         'offline-page.html'
       ]))
   );
