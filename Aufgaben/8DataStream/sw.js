@@ -5,14 +5,14 @@ self.addEventListener('install', event => {
   // TODO Arbeitsauftrag
   self.skipWaiting();
   event.waitUntil(
-    caches.open(cacheName)
+      caches.open(cacheName)
       .then(cache => cache.addAll([
         './js/main.js',
         './images/newspaper.svg',
-        './css/site.css',
-        './header.html',
-        './footer.html',
-        'offline-page.html'
+        './css/site.css',    
+        './header.html',     
+        './footer.html', 
+        'offline-page.html' 
       ]))
   );
 });
@@ -49,39 +49,39 @@ function streamArticle(url) {
   // TODO Arbeitsauftrag
   try {
     new ReadableStream({});
-    }
-    catch (e) {
+  }
+  catch (e) {
     return new Response("Streams not supported");
-    }
-    const stream = new ReadableStream({
+  }
+  const stream = new ReadableStream({
     start(controller) {
-    const startFetch = caches.match('header.html');
-    const bodyData = fetch(`data/${url}.html`)
-   .catch(() => new Response('Body fetch failed'));
-    const endFetch = caches.match('footer.html');
-    function pushStream(stream) {
-    const reader = stream.getReader();
-    function read() {
-    return reader.read().then(result => {
-    if (result.done) return;
-    controller.enqueue(result.value);
-    return read();
-    });
+      const startFetch = caches.match('header.html');
+      const bodyData = fetch(`data/${url}.html`)
+        .catch(() => new Response('Body fetch failed'));
+      const endFetch = caches.match('footer.html');
+      function pushStream(stream) {
+        const reader = stream.getReader();
+        function read() {
+          return reader.read().then(result => {
+            if (result.done) return;
+            controller.enqueue(result.value);
+            return read();
+          });
+        }
+        return read();
+      }
+      startFetch
+        .then(response => pushStream(response.body))
+        .then(() => bodyData)
+        .then(response => pushStream(response.body))
+        .then(() => endFetch)
+        .then(response => pushStream(response.body))
+        .then(() => controller.close());
     }
-    return read();
-    }
-    startFetch
-    .then(response => pushStream(response.body))
-    .then(() => bodyData)
-    .then(response => pushStream(response.body))
-    .then(() => endFetch)
-    .then(response => pushStream(response.body))
-    .then(() => controller.close());
-    }
-    });
-    return new Response(stream, {
+  });
+  return new Response(stream, {
     headers: { 'Content-Type': 'text/html' }
-    })
+  })
 }
 
 function getQueryString(field, url = window.location.href) {
@@ -99,7 +99,9 @@ self.addEventListener('fetch', function (event) {
   if (url.pathname.endsWith('/article.html')) {
 
     // TODO Arbeitsauftrag
-
+    const articleId = getQueryString('id');
+    const articleUrl = `data-${articleId}`; 
+    event.respondWith(streamArticle(articleUrl))
   } else if (url.pathname.endsWith('/index.html')) {
     const indexUrl = 'data-index';
 
