@@ -13,3 +13,17 @@
 
 </ul>
 
+<p id="touch">This will change on your phone if you touch it!</p>
+
+
+<script type="text/javascript">
+document.getElementById('touch').ontouchstart = function (eve) {
+this.innerHTML = 'Touch Down!';
+}
+document.getElementById('touch').ontouchend = function (eve) {
+this.innerHTML = 'Touch End!';
+}
+document.getElementById('click').onclick = function (eve) {
+this.innerHTML = 'Clicked!';
+}
+</script>
