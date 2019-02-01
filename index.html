@@ -17,6 +17,8 @@
 
 
 <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+
 document.getElementById('touch').ontouchstart = function (eve) {
 this.innerHTML = 'Touch Down!';
 }
@@ -26,4 +28,6 @@ this.innerHTML = 'Touch End!';
 document.getElementById('click').onclick = function (eve) {
 this.innerHTML = 'Clicked!';
 }
+ 
+})
 </script>
