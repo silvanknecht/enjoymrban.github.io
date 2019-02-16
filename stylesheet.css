@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+    /* For browsers that do not support gradients */
+    background-color: rgb(27, 55, 105);
+    /* Standard syntax (must be last) */
+    /* background-image: linear-gradient(to bottom right, rgb(11, 28, 58), rgb(27, 55, 105)); */
+    background-repeat: no-repeat;
+}
+
+nav {
+    background-color: white;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    top: 0px;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    z-index: 1000;
+
+}
+
+nav a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-bg-colored {
+    background-color: rgb(27, 55, 105);
+}
+
+.nav-bg-white {
+    background-color: white;
+}
+
+.nav-link-colored{
+    color: rgb(27, 55, 105);
+}
+
+.nav-link-white{
+    color: white;
+}
+
+.anchor {
+    padding-top: 90px;
+}
+
+
+#welcome-section {
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.welcome-item{
+    margin: 0 20px 0 20px;
+}
+
+#title-cont {
+    text-align: center;
+    /* -ms-transform: rotate(-20deg); /* IE 9 */
+    /* -webkit-transform: rotate(-20deg);  /* Safari */
+    /*transform: rotate(-20deg); */
+}
+
+#title-cont h1 {
+    font-size: 40px;
+}
+
+#title-cont p {
+    font-size: 20px;
+}
+
+#myPicture {
+    border-radius: 50%;
+    max-height: 471px;
+    max-width: 100%;
+    height: auto;
+}
+
+#socials{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#socials a{
+color: white;
+}
+
+#github-icon, #freecodecamp-icon, #twitter-icon, #facebook-icon {
+    height: 50px;
+    width: auto;
+}
+
+
+
+#projects,
+#links {
+    min-height: 500px;
+    background-color: white;
+}
+
+@media screen and (max-height: 469px) and (max-width: 728px ) {
+    #myPicture{
+        display: none;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #myPicture {
+        max-height: 200px;
+        max-width: 100%;
+    }
+
+    #title-cont h1{
+        font-size: 25px
+    }
+    #title-cont p{
+        font-size: 18px
+    }
+
+    #github-icon, #freecodecamp-icon, #twitter-icon, #facebook-icon {
+        height: 30px;
+    }
+
+}
+
+@media screen and (max-width: 1011px){
+
+    #title-cont {
+        margin-top: 20px;
+        order: 2;
+        top: -150px;
+    }
+}

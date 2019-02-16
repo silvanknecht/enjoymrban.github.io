@@ -1,34 +1,53 @@
-<h1>Willkommen!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<ul>
-    <li><a href="Aufgaben/1Getting-Started/index.html">Getting started</a></li>
-    <li><a href="Aufgaben/2LWD4e_chapter18/jenware-rwd.html">Setting the viewport</a></li>
-    <li><a href="Aufgaben/3FlexBox/FlexFlow/arbeitsauftrag-flexbox_2_flex-flow.html">Flexbox</a></li>
-    <li><a href="Aufgaben/4FlexBox&MediaQueries/index.html">Flexbox & Medie Queries</a></li>
-    <li><a href="Aufgaben/5DragAndDrop/index.html">Drag and Drop</a></li>
-    <li><a href="Aufgaben/6ServiceWorker/index.html">Service Worker</a></li>
-    <li><a href="Aufgaben/7FasterWebApps-Caching/progressive-times-template/progressive-times/index.html">Caching</a></li>
-    <li><a href="Aufgaben/8DataStream/index.html">Data Stream</a></li>
-   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Silvan Knecht</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
 
-</ul>
+<body>
+    <nav id="navbar" class="nav-bg-white">
+        <a class="nav-link nav-link-colored" href="#projects">Projects</a>
+        <a class="nav-link nav-link-colored" href="#about">About</a>
+        <a class="nav-link nav-link-colored" href="#contact">Contact</a>
+    </nav>
+    <section id="welcome-section" >
+        <div id="title-cont" class="welcome-item">
+            <h1 id="name">Silvan Knecht</h1>
+            <p>Systemtechnik - Informations- und Kommunikationssysteme</p>
+            <div id="socials">
+                <a id="profile-link" href="www.github.com" target="_blank"><i id="github-icon" class="fab fa-github-square"></i></a>
+                <a id="profile-link2" href="www.freecodecamp.com" target="_blank"><i id="freecodecamp-icon" class="fab fa-free-code-camp"></i></a>
+                <a id="profile-link3" href="www.twitter.com" target="_blank"><i id="twitter-icon" class="fab fa-twitter-square"></i></a>
+                <a id="profile-link4" href="www.facebook.com" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
 
-<p id="touch">This will change on your phone if you touch it!</p>
-<p id="click">This will change on your phone if you click it!</p>
+            </div>
+        </div>
+        <img id="myPicture" class="welcome-item" src="images/Capture.PNG" alt="Silvan Knecht">
+    </section>
+    <section id="projects" class="anchor">
+        <div class="project-tile">
+            <a href="www.github.com">Link to Project</a>
+        </div>
+    </section>
+
+    <section id="links" class="anchor">
 
 
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
+    </section>
 
-document.getElementById('touch').ontouchstart = function (eve) {
-this.innerHTML = 'Touch Down!';
-}
-document.getElementById('touch').ontouchend = function (eve) {
-this.innerHTML = 'Touch End!';
-}
-document.getElementById('click').onclick = function (eve) {
-this.innerHTML = 'Clicked!';
-}
- 
-})
-</script>
+
+
+
+
+    <script src="javascript.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+
+</html>
