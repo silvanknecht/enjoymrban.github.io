@@ -9,7 +9,7 @@ let navbar = document.getElementById('navbar');
 let navLinks = document.getElementsByClassName('nav-link');
 window.onscroll = function () {
     "use strict";
-    if (window.pageYOffset >= viewportHeight) {
+    if (window.pageYOffset >= viewportHeight-53) {
         navbar.classList.add("nav-bg-colored");
         navbar.classList.remove("nav-bg-white");
         for (let i = 0; i < navLinks.length; i++) {

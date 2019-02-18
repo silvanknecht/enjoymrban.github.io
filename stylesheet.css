@@ -13,7 +13,6 @@ body {
     height: 100%;
     min-height: 343px;
     /* For browsers that do not support gradients */
-    background-color: rgb(27, 55, 105);
     /* Standard syntax (must be last) */
     /* background-image: linear-gradient(to bottom right, rgb(11, 28, 58), rgb(27, 55, 105)); */
     background-repeat: no-repeat;
@@ -47,11 +46,11 @@ nav a {
     background-color: white;
 }
 
-.nav-link-colored{
+.nav-link-colored {
     color: rgb(27, 55, 105);
 }
 
-.nav-link-white{
+.nav-link-white {
     color: white;
 }
 
@@ -60,9 +59,9 @@ nav a {
 /* WELCOME */
 #welcome-section {
     height: 100%;
+    background-color: rgb(27, 55, 105);
     color: white;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -71,7 +70,7 @@ nav a {
 
 }
 
-.welcome-item{
+.welcome-item {
     margin: 0 20px 0 20px;
 }
 
@@ -97,88 +96,141 @@ nav a {
     height: auto;
 }
 
-#socials{
+#socials {
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
 }
 
-#socials a{
-color: white;
+#socials a {
+    color: white;
 }
 
-#github-icon, #freecodecamp-icon, #twitter-icon, #facebook-icon {
+#github-icon,
+#freecodecamp-icon,
+#twitter-icon,
+#facebook-icon {
     height: 50px;
     width: auto;
 }
 
-/* PROJETS */
+/* Sections */
 
-.anchor{
+.anchor {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 45px;
+    padding-top: 90px;
     min-height: 500px;
     background-color: white;
 
 }
 
-.anchor > h1 {
+.anchor>h1 {
     text-align: center;
     color: white;
     border-radius: 15px;
     /* border-bottom: 4px solid rgb(27, 55, 105); */
-    background-color:rgb(27, 55, 105);
+    background-color: rgb(27, 55, 105);
+}
+
+
+/* Projects */
+#project-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-tile {
+    margin-top: 10px;
+
+    border: 1px solid rgb(27, 55, 105);
+    border-radius: 12px;
+}
+
+.project-tile{
+max-width: 300px;
+}
+
+
+.tile-img {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    max-width: 300px !important;
+    height: auto !important;
+    width: 100%;
+}
+
+.tile-info{
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 
 
 /* FOOTER */
 
-  footer{
-      height: 60px;
-      width: 100%;
-      background-color: rgb(27, 55, 105);
-      color: white;
-  }
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(27, 55, 105);
+    color: white;
+}
 
-  footer p {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 16px;
-  }
+footer p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+}
 
 /* MEDIA QUERIES */
+@media screen and (max-height: 470px) {
 
-@media screen and (max-height: 469px) and (max-width: 728px ) {
-    #myPicture{
+    #myPicture {
         display: none;
     }
 }
 
-@media screen and (max-height: 765px) {
+@media screen and (max-height: 585px) and (min-width: 851px) {
+
     #myPicture {
-        max-height: 200px;
-        max-width: 100%;
+        display: none;
     }
-
-    #title-cont h1{
-        font-size: 25px
-    }
-    #title-cont p{
-        font-size: 18px
-    }
-
-    #github-icon, #freecodecamp-icon, #twitter-icon, #facebook-icon {
-        height: 30px;
-    }
-
 }
 
-@media screen and (max-width: 728px ) {
+
+@media screen and (max-width: 650px){
+    #project-cont{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #welcome-section {
+        flex-direction: column-reverse;
+    }
 
     #title-cont {
-        margin-top: 20px;
-        order: 2;
-        top: -150px;
+        margin-top: 15px;
     }
+
+    #title-cont h1 {
+        font-size: 30px;
+    }
+
+    #title-cont p {
+        font-size: 18px;
+    }
+
+    #myPicture {
+        max-height: 200px;
+    }
+
+    #github-icon,
+    #freecodecamp-icon,
+    #twitter-icon,
+    #facebook-icon {
+        height: 25px;
+        width: auto;
+    }
+
 }
