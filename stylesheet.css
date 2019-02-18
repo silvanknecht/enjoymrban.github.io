@@ -122,20 +122,23 @@ nav a {
     background-color: #f2f2f2;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 90px;
+    padding-top: 60px;
     min-height: 500px;
 
 
 }
 
 .anchor>h1 {
-    text-align: center;
+    /* text-align: center; */
     color: white;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    padding: 5px 0 15px 0;
+    /* border-top-right-radius: 15px;
+    border-top-left-radius: 15px; */
 
     /* border-bottom: 4px solid rgb(27, 55, 105); */
-    background-color: rgb(27, 55, 105);
+    /* background-color: rgb(27, 55, 105); */
+    color:rgb(27, 55, 105);
+    font-size: 40px;
 }
 
 
@@ -151,9 +154,10 @@ nav a {
     margin: 5px;
     margin-top: 10px;
     max-width: 300px;
-    border-top-left-radius: 11px;
-    border-top-right-radius: 11px;
+    /* border-top-left-radius: 11px;
+    border-top-right-radius: 11px; */
     transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .project-tile:hover {
@@ -163,8 +167,8 @@ nav a {
 
 
 .tile-img {
-    border-top-left-radius: 11px;
-    border-top-right-radius: 11px;
+    /* border-top-left-radius: 11px;
+    border-top-right-radius: 11px; */
     max-width: 300px !important;
     height: auto !important;
     width: 100%;
