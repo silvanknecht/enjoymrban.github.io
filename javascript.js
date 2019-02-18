@@ -45,3 +45,7 @@ function typeWriter() {
       setTimeout(typeWriter, speed);
     }
   }
+
+  function notBuiltYet(){
+      alert("page under construction");
+  }

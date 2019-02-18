@@ -131,7 +131,9 @@ nav a {
 .anchor>h1 {
     text-align: center;
     color: white;
-    border-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
     /* border-bottom: 4px solid rgb(27, 55, 105); */
     background-color: rgb(27, 55, 105);
 }
@@ -229,7 +231,7 @@ footer p {
 
 
 @media screen and (max-width: 840px){
-   
+
     .anchor{
         padding-right: 15px;
         padding-left: 15px;
