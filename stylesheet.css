@@ -166,6 +166,20 @@ max-width: 300px;
     padding-bottom: 5px;
 }
 
+.tile-tech{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tech-icon{
+   height: 30px;
+   width: auto;
+   padding-top: 15px;
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
 
 /* FOOTER */
 
@@ -229,7 +243,7 @@ footer p {
     #freecodecamp-icon,
     #twitter-icon,
     #facebook-icon {
-        height: 25px;
+        height: 35px;
         width: auto;
     }
 
