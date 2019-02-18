@@ -11,12 +11,15 @@ html {
 html,
 body {
     height: 100%;
+    min-height: 343px;
     /* For browsers that do not support gradients */
     background-color: rgb(27, 55, 105);
     /* Standard syntax (must be last) */
     /* background-image: linear-gradient(to bottom right, rgb(11, 28, 58), rgb(27, 55, 105)); */
     background-repeat: no-repeat;
 }
+
+/* NAV */
 
 nav {
     background-color: white;
@@ -52,11 +55,9 @@ nav a {
     color: white;
 }
 
-.anchor {
-    padding-top: 90px;
-}
 
 
+/* WELCOME */
 #welcome-section {
     height: 100%;
     color: white;
@@ -111,13 +112,42 @@ color: white;
     width: auto;
 }
 
+/* PROJETS */
 
-
-#projects,
-#links {
+.anchor{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 45px;
     min-height: 500px;
     background-color: white;
+
 }
+
+.anchor > h1 {
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    /* border-bottom: 4px solid rgb(27, 55, 105); */
+    background-color:rgb(27, 55, 105);
+}
+
+
+/* FOOTER */
+
+  footer{
+      height: 60px;
+      width: 100%;
+      background-color: rgb(27, 55, 105);
+      color: white;
+  }
+
+  footer p {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+  }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-height: 469px) and (max-width: 728px ) {
     #myPicture{
@@ -125,7 +155,7 @@ color: white;
     }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 765px) {
     #myPicture {
         max-height: 200px;
         max-width: 100%;
@@ -144,7 +174,7 @@ color: white;
 
 }
 
-@media screen and (max-width: 1011px){
+@media screen and (max-width: 728px ) {
 
     #title-cont {
         margin-top: 20px;
