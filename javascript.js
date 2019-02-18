@@ -9,7 +9,7 @@ let navbar = document.getElementById('navbar');
 let navLinks = document.getElementsByClassName('nav-link');
 window.onscroll = function () {
     "use strict";
-    if (window.pageYOffset >= viewportHeight-53) {
+    if (window.pageYOffset >= viewportHeight - 53) {
         navbar.classList.add("nav-bg-colored");
         navbar.classList.remove("nav-bg-white");
         for (let i = 0; i < navLinks.length; i++) {
@@ -26,3 +26,22 @@ window.onscroll = function () {
         }
     }
 };
+
+
+window.onload = function () {
+typeWriter();
+
+
+};
+
+let bachelor = "Systemtechnik - Informations- und Kommunikationssysteme";
+let speed = 60;
+let i = 0;
+
+function typeWriter() {
+    if (i < bachelor.length) {
+      document.getElementById("bachelor").innerHTML += bachelor.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }

@@ -10,6 +10,7 @@ html {
 
 html,
 body {
+    background-color: #f2f2f2;
     height: 100%;
     min-height: 343px;
     /* For browsers that do not support gradients */
@@ -17,6 +18,7 @@ body {
     /* background-image: linear-gradient(to bottom right, rgb(11, 28, 58), rgb(27, 55, 105)); */
     background-repeat: no-repeat;
 }
+
 
 /* NAV */
 
@@ -117,11 +119,12 @@ nav a {
 /* Sections */
 
 .anchor {
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color: #f2f2f2;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-top: 90px;
     min-height: 500px;
-    background-color: white;
+
 
 }
 
@@ -142,15 +145,19 @@ nav a {
 }
 
 .project-tile {
+    background-color: white;
+    margin: 5px;
     margin-top: 10px;
-
-    border: 1px solid rgb(27, 55, 105);
-    border-radius: 12px;
+    max-width: 300px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    transition: transform .2s;
 }
 
-.project-tile{
-max-width: 300px;
-}
+.project-tile:hover {
+    transform: scale(1.025);
+  }
+
 
 
 .tile-img {
@@ -185,14 +192,15 @@ max-width: 300px;
 
 footer {
     height: 60px;
+    margin-top: 30px;
     width: 100%;
     background-color: rgb(27, 55, 105);
     color: white;
 }
 
 footer p {
+    padding-top: 20px;
     text-align: center;
-    margin-top: 30px;
     font-size: 16px;
 }
 
@@ -211,10 +219,20 @@ footer p {
     }
 }
 
-
-@media screen and (max-width: 650px){
+@media screen and (max-width: 666px){
     #project-cont{
         justify-content: center;
+    }
+
+
+}
+
+
+@media screen and (max-width: 840px){
+   
+    .anchor{
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 
