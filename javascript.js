@@ -29,7 +29,7 @@ window.onscroll = function () {
 
 
 window.onload = function () {
-typeWriter();
+//typeWriter();
 
 
 };
