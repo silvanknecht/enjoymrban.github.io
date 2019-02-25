@@ -1,7 +1,7 @@
 let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 document.getElementsByTagName('body')[0].onresize = function () {
     viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    console.log(viewportHeight);
+    //console.log(viewportHeight);
 };
 
 

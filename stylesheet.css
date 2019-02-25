@@ -102,7 +102,7 @@ nav a {
 #socials {
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 #socials a {
