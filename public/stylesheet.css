@@ -131,7 +131,7 @@ nav a {
 
 .anchor>h1 {
     /* text-align: center; */
-    color: white;
+    /* color: white; */
     padding: 5px 0 15px 5px;
 
     /* border-top-right-radius: 15px;
@@ -141,6 +141,11 @@ nav a {
     /* background-color: rgb(27, 55, 105); */
     color:rgb(27, 55, 105);
     font-size: 40px;
+}
+
+.anchor h2 {
+    padding: 5px 0 15px 5px;
+    color:rgb(27, 55, 105);
 }
 
 
