@@ -200,6 +200,11 @@ nav a {
    margin-right: 5px;
 }
 
+/* ABOUT */
+#about{
+    display: none;
+}
+
 
 /* FOOTER */
 

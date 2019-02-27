@@ -4,7 +4,9 @@
   "description": "Personal Website",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "nodemailer": "^5.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
