@@ -1,5 +1,9 @@
 const nodemailer = require('nodemailer');
 const gmailAccount = require('../configuration/gmailAccount');
+const {
+  secret
+} = require('../configuration/recaptcha')
+const fetch = require('node-fetch');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -14,31 +18,53 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports = {
-  send: function (req, res) {
+  send: async function (req, res) {
+    console.log(req.body);
     let {
-      name,
-      email,
-      subject,
-      text
+      contactName,
+      contactEmail,
+      contactMessage,
+      token
     } = req.body;
-    res.send({
-      key: "value"
-    })
 
     let message = {
       from: "knecht.hans@gmail.com",
       to: "knecht.silvan@gmail.com",
-      subject,
-      text: `Name: ${name}, Email: ${email} | ${text}`,
-      html: `${text}<br><hr><p>Name: ${name}, Email ${email}</p>`
+      subject: "KONAKTFORMULAR : silvanknecht.ch",
+      text: `Name: ${contactName}, Email: ${contactEmail} | ${contactMessage}`,
+      html: `${contactMessage}<br><hr><p>Name: ${contactName}, Email: ${contactEmail}</p>`
     };
 
 
-    transporter.sendMail(message, (err, res) => {
-      if (err) {
-        console.log('Email NOT sent!', err);
-      } else {}
-    })
+    fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`, {
+        method: 'post',
+      })
+      .then(resGoogleAPI => {
+        return resGoogleAPI.json();
+      }).then(body => {
+        console.log(body);
+        if (body.success !== undefined && !body.success) {
+          return res.json({
+            "responseError": "Failed captcha verification"
+          });
+        } else {
+          res.json({
+            "responseSuccess": "Sucess"
+          });
+
+          transporter.sendMail(message, (err, res) => {
+            if (err) {
+              console.log('Email NOT sent!', err);
+            } else {
+              res.status(200);
+            }
+          });
+        }
+
+      })
+      .catch((err) => {
+        console.log(err)
+      });
 
   }
 }

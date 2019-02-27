@@ -5,7 +5,12 @@ const path = require('path');
 
 // middlewares
 app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+
 app.use(express.static('public'));
+
 
 // index
 app.get('/',function(req,res){

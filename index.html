@@ -8,7 +8,7 @@
     <title>Silvan Knecht</title>
     <link rel="shortcut icon" href="./images/icons/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/stylesheet.css">
 </head>
 
 <body>
@@ -149,6 +149,27 @@
 
 
     </section>
+    <section id="contact" class="anchor">
+        <h1>Kontakt</h1>
+        <p>Wenn Sie mir eine Nachricht hinterlassen wollen, dann nutzen sie bitte das nachfolgende Formular. Ich werde Ihnen so schnell wie möglich auf ihre Anfrage antworten!</p>
+        <form id="contactForm">
+            <div class="form-field">
+                <label id="contactNameLabel" for="contactName" >Name:</label>
+                <input id="contactName" type="text" name="contactName">
+            </div>
+            <div class="form-field">
+                <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
+                <input id="contactEmail" type="text" name="contactEmail">
+            </div>
+            <div class="form-field">
+                <label id="contactMessageLabel" for="contactMessage">Nachricht:</label>
+                <textarea id="contactMessage" type="text" name="contactMessage"></textarea>
+            </div>
+            <button id="contactFormButton" type="button" name="contactFormButton"><b>Abschicken</b></button>
+        </form>
+        <div class="g-recaptcha" data-sitekey="my-public-key"></div>
+
+    </section>
     <footer>
         <p>Silvan Knecht - 2019</p>
     </footer>
@@ -157,7 +178,9 @@
 
 
 
-    <script src="javascript.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le9bpQUAAAAABVU0-DW-4QNoSneiSGYNyxX3EHz"></script>
+    <script src="./javascripts/javascript.js"></script>
+    <script src="./javascripts/mail.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
 

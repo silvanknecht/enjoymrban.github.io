@@ -5,8 +5,14 @@ const router = express.Router();
 // import controllers
 const MailController = require('../controllers/MailController');
 
+// import validation funciton/ schemas
+const {
+    validateBody,
+    schemas
+} = require('../helpers/formValidation');
 
-router.post('/', (req, res, next) =>{
+
+router.post('/',validateBody(schemas.contactSchema), (req, res, next) =>{
     MailController.send(req, res);
 });
 
