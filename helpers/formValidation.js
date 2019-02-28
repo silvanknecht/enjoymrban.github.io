@@ -19,7 +19,7 @@ module.exports = {
             contactName: Joi.string().required().min(3).max(20),
             contactEmail: Joi.string().email({ minDomainAtoms: 2 }).required(),
             contactMessage: Joi.string().required().min(10).max(500),
-            token: Joi.string().required().min(334).max(334)
+            token: Joi.string().required().min(300).max(500)
         })
     }
 };
