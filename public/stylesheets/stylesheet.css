@@ -224,6 +224,7 @@ form {
 
 .form-field input,
 textarea {
+    padding: 4px;
     flex-grow: 10;
 }
 
@@ -240,7 +241,31 @@ form button{
 form button:active{
 
         transform: scale(1.005);
-    }
+}
+
+.formSuccess{
+    animation-name: color_success;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes color_success {
+	from { background-color: green; }
+	to { background-color: white; }
+}
+
+.formFail{
+    animation-name: color_fail;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes color_fail {
+	from { background-color: red; }
+	to { background-color: white; }
+}
 
 
 /* FOOTER */
@@ -338,3 +363,16 @@ footer p {
     }
 
 }
+
+
+/* TODO: make the captcha responsive */
+/* Recaptcha HOTFIX */
+
+@media screen and (max-width: 500px) {
+    #rc-imageselect, .g-recaptcha
+    {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+    }
+    }

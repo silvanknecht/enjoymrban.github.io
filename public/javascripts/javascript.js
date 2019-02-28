@@ -1,11 +1,12 @@
-let url = 'http://silvanknecht.ch/';
+let url = 'http://localhost:3000/';
 let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 document.getElementsByTagName('body')[0].onresize = function () {
     viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    //console.log(viewportHeight);
+    // console.log(viewportHeight);
 };
 
 
+// change the color of the navbar to white when leaving the blue backgorund
 let navbar = document.getElementById('navbar');
 let navLinks = document.getElementsByClassName('nav-link');
 window.onscroll = function () {
@@ -30,7 +31,7 @@ window.onscroll = function () {
 
 
 window.onload = function () {
-//typeWriter();
+// typeWriter();
 
 
 };

@@ -15,7 +15,7 @@
     <nav id="navbar" class="nav-bg-white">
         <a class="nav-link nav-link-colored" href="#projects">Projekte</a>
         <a class="nav-link nav-link-colored" href="#about" onclick="notBuiltYet()">Über mich</a>
-        <a class="nav-link nav-link-colored" href="#contact" onclick="notBuiltYet()">Kontakt</a>
+        <a class="nav-link nav-link-colored" href="#contact">Kontakt</a>
     </nav>
     <section id="welcome-section">
         <div id="title-cont" class="welcome-item">
@@ -153,24 +153,24 @@
         <h1>Kontakt</h1>
         <p>Wenn Sie mir eine Nachricht hinterlassen wollen, dann nutzen sie bitte das nachfolgende Formular. Ich werde
             Ihnen so schnell wie möglich auf ihre Anfrage antworten!</p>
-        <form id="contactForm">
+        <form id="contactForm" onsubmit="return false">
             <div class="form-field">
-                <label id="contactNameLabel" for="contactName">Name:</label>
-                <input id="contactName" type="text" name="contactName">
+                <label id="contactNameLabel" for="contactName" >Name:</label>
+                <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20" oninvalid="notValid()" required>
             </div>
             <div class="form-field">
                 <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
-                <input id="contactEmail" type="email" name="contactEmail">
+                <input id="contactEmail" type="email" name="contactEmail" oninvalid="notValid()" required>
             </div>
             <div class="form-field">
                 <label id="contactMessageLabel" for="contactMessage">Nachricht:</label>
-                <textarea id="contactMessage" type="text" name="contactMessage"></textarea>
+                <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500" oninvalid="notValid()" required></textarea>
             </div>
             <div class="form-field">
                 <div class="g-recaptcha" data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"></div>
 
             </div>
-            <button id="contactFormButton" type="button" name="contactFormButton"><b>Abschicken</b></button>
+            <button id="contactFormButton" class="" type="submit" name="contactFormButton"><b>Abschicken</b></button>
         </form>
 
     </section>
