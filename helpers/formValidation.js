@@ -6,7 +6,8 @@ module.exports = {
         return (req, res, next) => {
             const result = Joi.validate(req.body, schema);
             if (result.error) {
-                return res.status(400).send(result.error);
+                console.log(result.error.details);
+                return res.status(400).json(result.error.details);
                 //.json(result.error);
             }
             next();
@@ -17,7 +18,7 @@ module.exports = {
         contactSchema: Joi.object().keys({
             contactName: Joi.string().required().min(3).max(20),
             contactEmail: Joi.string().email({ minDomainAtoms: 2 }).required(),
-            contactMessage: Joi.string().required().min(20).max(500),
+            contactMessage: Joi.string().required().min(10).max(500),
             token: Joi.string().required().min(334).max(334)
         })
     }

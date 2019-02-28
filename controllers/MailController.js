@@ -35,28 +35,35 @@ module.exports = {
       html: `${contactMessage}<br><hr><p>Name: ${contactName}, Email: ${contactEmail}</p>`
     };
 
+    if (token === undefined || token === '' || token === null) {
+      return res.json({
+        "success": false,
+        "msg": "Please select captcha"
+      });
+    }
 
-    fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`, {
+    fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}&remoteip${req.connection.remoteAddress}`, {
         method: 'post',
       })
       .then(resGoogleAPI => {
         return resGoogleAPI.json();
       }).then(body => {
-        console.log(body);
         if (body.success !== undefined && !body.success) {
           return res.json({
-            "responseError": "Failed captcha verification"
+            "success": false,
+            "msg": "failed captcha verification"
           });
         } else {
           res.json({
-            "responseSuccess": "Sucess"
+            "success": true,
+            "msg": "captcha passed"
           });
 
           transporter.sendMail(message, (err, res) => {
             if (err) {
               console.log('Email NOT sent!', err);
             } else {
-              res.status(200);
+              res.status(200).json("Email sent!");
             }
           });
         }
