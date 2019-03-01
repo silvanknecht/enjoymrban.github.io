@@ -156,21 +156,21 @@
         <form id="contactForm" onsubmit="return false">
             <div class="form-field">
                 <label id="contactNameLabel" for="contactName" >Name:</label>
-                <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20" oninvalid="notValid()" required>
+                <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20" oninvalid="formFeedback(false)" required>
             </div>
             <div class="form-field">
                 <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
-                <input id="contactEmail" type="email" name="contactEmail" oninvalid="notValid()" required>
+                <input id="contactEmail" type="email" name="contactEmail" oninvalid="formFeedback(false)" required>
             </div>
             <div class="form-field">
                 <label id="contactMessageLabel" for="contactMessage">Nachricht:</label>
-                <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500" oninvalid="notValid()" required></textarea>
+                <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500" oninvalid="formFeedback(false)" required></textarea>
             </div>
             <div class="form-field">
                 <div class="g-recaptcha" data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"></div>
 
             </div>
-            <button id="contactFormButton" class="" type="submit" name="contactFormButton"><b>Abschicken</b></button>
+            <button id="contactFormButton" class="" type="submit" name="contactFormButton" onclick="sendForm()"><b>Abschicken</b></button>
         </form>
 
     </section>

@@ -205,9 +205,9 @@ nav a {
 }
 
 form {
-    margin-top:20px;
+    margin-top: 20px;
     padding: 30px 20px 30px 20px;
-    background-color:  rgb(27, 55, 105);
+    background-color: rgb(27, 55, 105);
     color: white;
 }
 
@@ -228,43 +228,61 @@ textarea {
     flex-grow: 10;
 }
 
-form button{
+form button {
     width: 100%;
     padding: 5px;
-    background-color:white;
+    background-color: white;
     color: rgb(27, 55, 105);
-    border:none;
+    border: none;
     margin-top: 5px;
 
 }
 
-form button:active{
+form button:active {
 
-        transform: scale(1.005);
+    transform: scale(1.005);
 }
 
-.formSuccess{
+.formSuccess {
     animation-name: color_success;
-	animation-duration: 4s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
 }
 
 @-webkit-keyframes color_success {
-	from { background-color: green; }
-	to { background-color: white; }
+    0% {
+        background-color: green;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: white;
+    }
 }
 
-.formFail{
+.formFail {
     animation-name: color_fail;
-	animation-duration: 4s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
 }
 
 @-webkit-keyframes color_fail {
-	from { background-color: red; }
-	to { background-color: white; }
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: white;
+    }
 }
 
 
@@ -369,10 +387,12 @@ footer p {
 /* Recaptcha HOTFIX */
 
 @media screen and (max-width: 500px) {
-    #rc-imageselect, .g-recaptcha
-    {
-    transform:scale(0.77);
-    -webkit-transform:scale(0.77);transform-origin:0 0;
-    -webkit-transform-origin:0 0;
+
+    #rc-imageselect,
+    .g-recaptcha {
+        transform: scale(0.77);
+        -webkit-transform: scale(0.77);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
     }
-    }
+}
