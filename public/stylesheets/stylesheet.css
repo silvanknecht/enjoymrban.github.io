@@ -124,7 +124,10 @@ nav a {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 60px;
-    min-height: 500px;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+
 
 
 }
@@ -154,11 +157,13 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 -10px;
 }
 
 .project-tile {
     background-color: white;
     margin-top: 10px;
+    margin: 10px 10px;
     max-width: 300px;
     /* border-top-left-radius: 11px;
     border-top-right-radius: 11px; */
@@ -362,13 +367,6 @@ footer p {
 
 }
 
-@media screen and (max-width: 470px) {
-
-    /* contact */
-    .form-field {
-        flex-direction: column;
-    }
-}
 
 @media screen and (max-height: 585px) and (min-width: 851px) {
 
@@ -387,17 +385,16 @@ footer p {
         text-align: center;
     }
 
-
-}
-
-
-@media screen and (max-width: 840px) {
-
-    .anchor {
-        padding-right: 15px;
-        padding-left: 15px;
+    /* contact */
+    .form-field {
+        flex-direction: column;
     }
+
+
 }
+
+
+
 
 @media screen and (max-width: 850px) {
     #welcome-section {
@@ -423,12 +420,36 @@ footer p {
     #github-icon,
     #freecodecamp-icon,
     #twitter-icon,
-    #facebook-icon {
+    #linkedin-icon {
         height: 35px;
         width: auto;
     }
 
 }
+@media screen and (max-width: 1477px){
+    .anchor {
+        max-width: 940px;
+
+    }
+}
+
+@media screen and (max-width: 1156px){
+    .anchor {
+        max-width: 620px;
+
+    }
+}
+
+
+@media screen and (max-width: 840px) {
+
+    .anchor {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 620px;
+    }
+}
+
 
 
 /* TODO: make the captcha responsive */
