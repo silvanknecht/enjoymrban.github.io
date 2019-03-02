@@ -3,6 +3,7 @@ const mail = require('./routes/mail');
 const app = express();
 const path = require('path');
 
+
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({

@@ -49,6 +49,7 @@ module.exports = {
         return resGoogleAPI.json();
       }).then(body => {
         if (body.success !== undefined && !body.success) {
+          console.log(body.success);
           return res.json({
             "success": false,
             "msg": "failed captcha verification"
@@ -63,6 +64,7 @@ module.exports = {
             if (err) {
               console.log('Email NOT sent!', err);
             } else {
+              console.log("Email sent")
               res.status(200).json("Email sent!");
             }
           });

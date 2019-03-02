@@ -23,20 +23,20 @@
             <p id="bachelor">Systemtechnik - Informations- und Kommunikationssysteme</p>
             <div id="socials">
                 <a id="profile-link" href="https://github.com/silvanknecht" target="_blank"><i id="github-icon" class="fab fa-github-square"></i></a>
+                <a id="profile-link4" href="https://www.linkedin.com/in/silvan-knecht-6259b9134/" target="_blank"><i id="linkedin-icon"
+                        class="fab fa-linkedin"></i></a>
                 <a id="profile-link2" href="https://www.freecodecamp.org/silvanknecht" target="_blank"><i id="freecodecamp-icon"
                         class="fab fa-free-code-camp"></i></a>
                 <a id="profile-link3" href="https://twitter.com/SBKnecht" target="_blank"><i id="twitter-icon" class="fab fa-twitter-square"></i></a>
-                <a id="profile-link4" href="https://www.facebook.com/silvan.knecht.79" target="_blank"><i id="facebook-icon"
-                        class="fab fa-facebook-square"></i></a>
             </div>
         </div>
-        <img id="myPicture" class="welcome-item" src="images/Capture.PNG" alt="Silvan Knecht">
+        <img id="myPicture" class="welcome-item" src="images/silvanknecht.jpg" alt="Silvan Knecht">
     </section>
     <section id="projects" class="anchor">
         <h1>Projekte</h1>
         <div id="project-cont">
             <div class="project-tile">
-                <a href="https://jklfitbuddy.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jklfitbuddy.PNG"
+                <a href="https://jklfitbuddy.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jklfitbuddy.jpg"
                         alt="jklfitbuddy"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">JKL Fitbuddy</h1>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="project-tile">
-                <a href="https://jkl2dolist.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jkl2dolist.PNG"
+                <a href="https://jkl2dolist.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jkl2dolist.jpg"
                         alt="jkl2dolist"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">JKL 2DoList</h1>
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="project-tile">
-                <a href="https://jklearnapp.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jklearnapp.PNG"
+                <a href="https://jklearnapp.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jklearnapp.jpg"
                         alt="jklearnapp"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">JK Lern App</h1>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="project-tile">
-                <a href="https://jkluxery.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jkluxery.PNG"
+                <a href="https://jkluxery.herokuapp.com" target="_blank"><img class="tile-img" src="./images/projects/jkluxery.jpg"
                         alt="jkluxery"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">JK Luxery</h1>
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="project-tile">
-                <a href="https://kcalculator.herokuapp.com/" target="_blank"><img class="tile-img" src="./images/projects/jscalculator.PNG"
+                <a href="https://kcalculator.herokuapp.com/" target="_blank"><img class="tile-img" src="./images/projects/jscalculator.jpg"
                         alt="jkl2dolist"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">K Calculator</h1>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="project-tile">
-                <a href="https://codepen.io/enjoymrban/full/aPRPPb" target="_blank"><img class="tile-img" src="./images/projects/fcclandingpage.PNG"
+                <a href="https://codepen.io/enjoymrban/full/aPRPPb" target="_blank"><img class="tile-img" src="./images/projects/fcclandingpage.jpg"
                         alt="fcc Landing Page"></a>
                 <div class="tile-info">
                     <h1 class="tile-title">FCC Landing Page</h1>
@@ -155,8 +155,9 @@
             Ihnen so schnell wie möglich auf ihre Anfrage antworten!</p>
         <form id="contactForm" onsubmit="return false">
             <div class="form-field">
-                <label id="contactNameLabel" for="contactName" >Name:</label>
-                <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20" oninvalid="formFeedback(false)" required>
+                <label id="contactNameLabel" for="contactName">Name:</label>
+                <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20" oninvalid="formFeedback(false)"
+                    required>
             </div>
             <div class="form-field">
                 <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
@@ -164,19 +165,26 @@
             </div>
             <div class="form-field">
                 <label id="contactMessageLabel" for="contactMessage">Nachricht:</label>
-                <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500" oninvalid="formFeedback(false)" required></textarea>
+                <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500"
+                    oninvalid="formFeedback(false)" required></textarea>
             </div>
-            <div class="form-field">
-                <div class="g-recaptcha" data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"></div>
-
-            </div>
-            <button id="contactFormButton" class="" type="submit" name="contactFormButton" onclick="sendForm()"><b>Abschicken</b></button>
+            <button id="contactFormButton" class="" type="submit" name="contactFormButton" onclick="openCaptchaModal()"><b>Abschicken</b></button>
         </form>
+
+
 
     </section>
     <footer>
         <p>Silvan Knecht - 2019</p>
     </footer>
+
+    <div id="captchaModal" class="modal">
+        <!-- Captcha Modal -->
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <div class="g-recaptcha" data-callback="recaptcha_callback" data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"></div>
+        </div>
+    </div>
 
 
 
