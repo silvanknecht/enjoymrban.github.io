@@ -63,6 +63,11 @@ nav a {
 #welcome-section {
     height: 100%;
     background-color: rgb(27, 55, 105);
+    background-image:url('../images/welcome-background/screen2.JPG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     color: white;
     display: flex;
     align-items: center;
@@ -161,6 +166,8 @@ nav a {
 }
 
 .project-tile {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     margin-top: 10px;
     margin: 10px 10px;
