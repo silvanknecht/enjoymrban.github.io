@@ -1,6 +1,5 @@
 const express = require('express');
 const mail = require('./routes/mail');
-const languages = require('./routes/languages');
 const app = express();
 const path = require('path');
 
@@ -21,7 +20,6 @@ app.get('/',function(req,res){
 
 // routes
 app.use('/mail', mail);
-app.use('/languages', languages);
 
 // add the router
 app.listen(process.env.port || 3000);

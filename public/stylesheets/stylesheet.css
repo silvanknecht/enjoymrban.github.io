@@ -193,6 +193,9 @@ nav a {
 }
 
 .tile-info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     padding-left: 5px;
     padding-bottom: 5px;
 }
@@ -200,7 +203,9 @@ nav a {
 .tile-tech {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
     flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .tech-icon {
