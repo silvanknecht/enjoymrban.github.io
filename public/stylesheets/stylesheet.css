@@ -84,9 +84,6 @@ nav a {
 
 #title-cont {
     text-align: center;
-    /* -ms-transform: rotate(-20deg); /* IE 9 */
-    /* -webkit-transform: rotate(-20deg);  /* Safari */
-    /*transform: rotate(-20deg); */
 }
 
 #title-cont h1 {
@@ -113,11 +110,10 @@ nav a {
 #socials a {
     color: white;
 }
-
-#github-icon,
-#freecodecamp-icon,
-#twitter-icon,
-#linkedin-icon {
+#welcome-section #github-icon,
+#welcome-section #freecodecamp-icon,
+#welcome-section #twitter-icon,
+#welcome-section #linkedin-icon {
     height: 50px;
     width: auto;
 }
@@ -198,6 +194,12 @@ nav a {
     flex-direction: column;
     padding-left: 5px;
     padding-bottom: 5px;
+}
+
+h1 a {
+    color: black;
+    float: right;
+    margin-right: 5px;
 }
 
 .tile-tech {
@@ -429,10 +431,10 @@ footer p {
         max-height: 200px;
     }
 
-    #github-icon,
-    #freecodecamp-icon,
-    #twitter-icon,
-    #linkedin-icon {
+    #welcome-section #github-icon,
+    #welcome-section #freecodecamp-icon,
+    #welcome-section #twitter-icon,
+    #welcome-section #linkedin-icon {
         height: 35px;
         width: auto;
     }
