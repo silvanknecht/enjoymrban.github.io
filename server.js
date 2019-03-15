@@ -15,15 +15,20 @@ app.use(express.static('public'));
 
 
 // index
-app.get('/',function(req,res){
-  console.log(req.connection.remoteAddress);
-  fs.appendFile(`/home/pi/Documents/data/ipadresses.txt`,req.connection.remoteAddress+"/r/n",function(err,data){
-    if(err){
-      console.log(err);
-    }
-  });
-  console.log(req.connection.remoteAddress);
-  res.sendFile(path.join(__dirname+'/index.html'));
+app.get('/', function (req, res) {
+  let filePath = `/home/pi/Documents/data/ipadresses.txt`;
+  let stats = fs.statSync(filePath);
+  if (stats["size"] < 5000000) {
+    fs.appendFile(filePath, req.connection.remoteAddress + ", ", function (err, data) {
+      if (err) {
+        console.log(err);
+      }
+
+    });
+  } else {
+    console.log("save file full");
+  }
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 // routes
@@ -32,9 +37,3 @@ app.use('/mail', mail);
 // add the router
 app.listen(process.env.port || 3000);
 console.log('Running at Port 3000');
-
-
-
-
-
-
