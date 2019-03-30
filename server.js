@@ -3,6 +3,7 @@ const mail = require('./routes/mail');
 const fs = require('fs');
 const app = express();
 const path = require('path');
+const compression = require('compression');
 
 
 // middlewares
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(compression());
 
 app.use(express.static('public'));
 
