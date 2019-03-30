@@ -18,18 +18,18 @@ app.use(express.static('public'));
 
 // index
 app.get('/', function (req, res) {
-  let filePath = `/home/pi/Documents/data/ipadresses.txt`;
-  let stats = fs.statSync(filePath);
-  if (stats["size"] < 5000000) {
-    fs.appendFile(filePath, req.connection.remoteAddress + ", ", function (err, data) {
-      if (err) {
-        console.log(err);
-      }
+  // let filePath = `/home/pi/Documents/data/ipadresses.txt`;
+  // let stats = fs.statSync(filePath);
+  // if (stats["size"] < 5000000) {
+  //   fs.appendFile(filePath, req.connection.remoteAddress + ", ", function (err, data) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
 
-    });
-  } else {
-    console.log("save file full");
-  }
+  //   });
+  // } else {
+  //   console.log("save file full");
+  // }
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
