@@ -1,5 +1,5 @@
 "use strict";
-function approveDomains(opts, certs, cb) {
+function approveDomain(opts, certs, cb) {
   console.log("approveDomains", opts);
   if (!/^(www\.)?silvanknecht\.ch$/.test(opts.domains)) {
     cb(new Error("no config found for '" + opts.domain + "'"));
@@ -22,8 +22,8 @@ var greenlock = require("greenlock-express").create({
 
   // You MUST change these to valid domains
   // NOTE: all domains will validated and listed on the certificate
-  approvedDomains: function(opts, certs, cb) {
-    approveDomains(opts, certs, cb);
+  approveDomains: function(opts, certs, cb) {
+    approveDomain(opts, certs, cb);
   },
 
   // You MUST have access to write to directory where certs are saved
