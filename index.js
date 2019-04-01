@@ -32,6 +32,7 @@ var greenlock = require("greenlock-express").create({
   configDir: "~/.config/acme/",
 
   app: function(req, res) {
+    console.log("app is running");
     require("./server.js")(req, res);
   }
 
