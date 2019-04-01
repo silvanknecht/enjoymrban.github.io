@@ -14,7 +14,7 @@ let score = 0;
 var activeRegion = ZingTouch.Region(c);
 new ZingTouch.Swipe({
   numInputs: 1,
-  maxRestTime: 100,
+  maxRestTime: 20,
   escapeVelocity: 0.1
 });
 activeRegion.bind(
