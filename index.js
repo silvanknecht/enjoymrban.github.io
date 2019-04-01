@@ -1,6 +1,6 @@
 "use strict";
 function approveDomains(opts, certs, cb) {
-  console.log("approveDomains",opts);
+  console.log("approveDomains", opts);
   if (!/^(www\.)?silvanknecht\.ch$/.test(opts.domains)) {
     cb(new Error("no config found for '" + opts.domain + "'"));
     return;
@@ -38,3 +38,4 @@ var greenlock = require("greenlock-express").create({
   //, debug: true
 });
 var server = greenlock.listen(80, 443);
+console.log("hallo");
