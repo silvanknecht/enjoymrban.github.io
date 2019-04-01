@@ -25,7 +25,8 @@ self.addEventListener("install", event => {
           "/images/technologies/bootstrap.jpg",
           "/images/technologies/play.jpg",
           "/images/technologies/html.jpg",
-          "/images/technologies/css.jpg"
+          "/images/technologies/css.jpg",
+          "https://use.fontawesome.com/releases/v5.7.2/js/all.js"
         ])
       )
       .catch(err => {
@@ -42,4 +43,12 @@ self.addEventListener("fetch", function(event) {
       return response || fetch(event.request);
     })
   );
+
+  var responseToCache = response.clone();
+  caches.open(cacheName).then(function(cache) {
+    if (event.request.method === "GET") {
+      cache.put(event.request, responseToCache);
+    }
+  });
+  return response;
 });
