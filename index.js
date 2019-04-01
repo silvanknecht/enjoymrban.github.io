@@ -1,6 +1,6 @@
 "use strict";
 function approveDomains(opts, certs, cb) {
-  console.log(opts);
+  console.log("approveDomains",opts);
   if (!/^(www\.)?silvanknecht\.ch$/.test(opts.domains)) {
     cb(new Error("no config found for '" + opts.domain + "'"));
     return;
@@ -12,12 +12,11 @@ function approveDomains(opts, certs, cb) {
 
   cb(null, { options: opts, certs: certs });
 }
-//require('greenlock-express')
 var greenlock = require("greenlock-express").create({
   // Let's Encrypt v2 is ACME draft 11
   version: "draft-11",
 
-  server: "https://acme-staging-v02.api.letsencrypt.org/directory",
+  server: "https://acme-v02.api.letsencrypt.org/directory",
   // Note: If at first you don't succeed, stop and switch to staging
   // https://acme-staging-v02.api.letsencrypt.org/directory
 
