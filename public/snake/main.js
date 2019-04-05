@@ -5,12 +5,14 @@ const HEIGHT = 600;
 const BODYHIGHT = 15;
 const BODYWIDTH = 15;
 
-var socket = io("http://silvanknecht.ch");
+var socket = io("http://localhost:3000");
 socket.on("connect", function() {
   console.log("Connected to Server!");
 });
 socket.on("event", function(data) {});
-socket.on("disconnect", function() {socket.close()});
+socket.on("disconnect", function() {
+  socket.close();
+});
 
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -20,29 +22,30 @@ socket.on("move", clients => {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
   ctx.stroke();
+  let height = 25;
 
   for (let c of clients) {
-    drawBody(c.snake.body);
+    drawBody(c.snake.body, c.color);
+    ctx.strokeStyle = c.color;
+    ctx.font = "16px Verdana";
+    ctx.strokeText(c.name + ": " + c.snake.score, WIDTH - 200, height);
+    height += 25;
   }
 
   //if (gameRunning) move();
   //eat();
-  let score = clients.find(x => x.id === socket.id).snake.score;
-  ctx.strokeStyle = "white";
-  ctx.font = "30px Verdana";
-  ctx.strokeText(score, WIDTH - 50, 50);
 });
 
 socket.on("food", food => {
   if (food.x !== null) drawFood(food);
 });
 
-function drawBody(body) {
+function drawBody(body, color) {
   for (let [i, bp] of body.entries()) {
     let { x, y } = bp;
 
     //ctx.strokeStyle = "red";
-    ctx.fillStyle = "white";
+    ctx.fillStyle = color;
     ctx.fillRect(x, y, BODYWIDTH, BODYHIGHT);
     //ctx.stroke();
     if (i === 0) {
@@ -73,3 +76,9 @@ document.onkeydown = function(e) {
       break;
   }
 };
+
+const nameButton = document.getElementById("nameButton");
+nameButton.addEventListener("click", () => {
+  const nickname = document.getElementById("nameInput").value;
+  socket.emit("nameChange", nickname);
+});
