@@ -1,5 +1,5 @@
-//let url = 'http://silvanknecht.ch/';
-let url = 'http://localhost:3000/';
+let url = 'http://silvanknecht.ch/';
+//let url = 'http://localhost:3000/';
 
 let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 document.getElementsByTagName('body')[0].onresize = function () {
