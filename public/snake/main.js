@@ -5,21 +5,18 @@ const HEIGHT = 600;
 const BODYHIGHT = 15;
 const BODYWIDTH = 15;
 
-var socket = io('http://localhost:3000');
-socket.on('connect', function () {
-  console.log('Connected to Server!')
+var socket = io("http://silvanknecht.ch");
+socket.on("connect", function() {
+  console.log("Connected to Server!");
 });
-socket.on('event', function (data) {});
-socket.on('disconnect', function () {});
-
+socket.on("event", function(data) {});
+socket.on("disconnect", function() {socket.close()});
 
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, WIDTH, HEIGHT);
 ctx.stroke();
 
-
-socket.on('move', (clients) => {
-  console.log(clients);
+socket.on("move", clients => {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
   ctx.stroke();
@@ -27,27 +24,22 @@ socket.on('move', (clients) => {
   for (let c of clients) {
     drawBody(c.snake.body);
   }
-  //if (food.x !== null) drawFood();
+
   //if (gameRunning) move();
   //eat();
+  let score = clients.find(x => x.id === socket.id).snake.score;
   ctx.strokeStyle = "white";
   ctx.font = "30px Verdana";
-  ctx.strokeText("score", WIDTH - 50, 50);
+  ctx.strokeText(score, WIDTH - 50, 50);
 });
 
-
-
-
-
-
-
+socket.on("food", food => {
+  if (food.x !== null) drawFood(food);
+});
 
 function drawBody(body) {
   for (let [i, bp] of body.entries()) {
-    let {
-      x,
-      y
-    } = bp;
+    let { x, y } = bp;
 
     //ctx.strokeStyle = "red";
     ctx.fillStyle = "white";
@@ -60,18 +52,12 @@ function drawBody(body) {
   }
 }
 
-function drawFood() {
+function drawFood(food) {
   ctx.strokeStyle = "red";
   ctx.strokeRect(food.x, food.y, BODYHIGHT, BODYWIDTH);
 }
 
-
-
-
-
-
-
-document.onkeydown = function (e) {
+document.onkeydown = function(e) {
   switch (e.keyCode) {
     case 37: // left
       socket.emit("changeDirection", "left");
@@ -80,7 +66,7 @@ document.onkeydown = function (e) {
       socket.emit("changeDirection", "up");
       break;
     case 39: // right
-      socket.emit("changeDirection", "right")
+      socket.emit("changeDirection", "right");
       break;
     case 40: // down
       socket.emit("changeDirection", "down");
