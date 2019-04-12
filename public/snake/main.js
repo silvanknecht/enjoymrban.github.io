@@ -13,7 +13,7 @@ socket.on("connect", function () {
 });
 socket.on("event", function (data) {});
 socket.on("disconnect", function () {
-  socket.close()
+  socket.close();
 });
 
 ctx.fillStyle = "black";
@@ -39,7 +39,7 @@ setInterval(function () {
   if (food.x !== null) drawFood();
 }, 10);
 
-function drawBody(body) {
+function drawBody(body, color) {
   for (let [i, bp] of body.entries()) {
     let {
       x,
@@ -47,7 +47,7 @@ function drawBody(body) {
     } = bp;
 
     //ctx.strokeStyle = "red";
-    ctx.fillStyle = "white";
+    ctx.fillStyle = color;
     ctx.fillRect(x, y, BODYWIDTH, BODYHIGHT);
     //ctx.stroke();
     if (i === 0) {
@@ -90,3 +90,9 @@ document.onkeydown = function (e) {
       break;
   }
 };
+
+const nameButton = document.getElementById("nameButton");
+nameButton.addEventListener("click", () => {
+  const nickname = document.getElementById("nameInput").value;
+  socket.emit("nameChange", nickname);
+});

@@ -23,12 +23,13 @@ io.on("connection", client => {
   console.log("connected to server!");
   let newClient = {
     id: client.id,
-    snake: new Snake()
+    snake: new Snake(),
+    color: getRandomColor(),
+    name: "Anonymous"
   };
   clients.push(newClient);
 
   client.on("changeDirection", dir => {
-
     let snakeToUpdate = clients.find(x => x.id === client.id).snake;
 
     switch (dir) {
@@ -63,15 +64,29 @@ io.on("connection", client => {
     }
   });
 
-  client.on("disconnect", ()=>{
+  client.on("disconnect", () => {
     for (let i = 0; i < clients.length; i++) {
       if (clients[i].id === client.id) {
         clients.splice(i, 1);
       }
     }
   });
+
+  client.on("nameChange", data => {
+    let clientToUpdate = clients.find(x => x.id === client.id);
+    clientToUpdate.name = data;
+    console.log("Name Changed to " + clientToUpdate.name);
+  });
 });
 
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 class Snake {
   constructor() {
     this.mov = {
@@ -170,7 +185,6 @@ setInterval(function() {
   io.emit("move", clients);
   io.emit("food", food);
 }, 100);
-
 
 // middlewares
 app.use(express.json());
