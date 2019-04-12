@@ -7,7 +7,7 @@ const BODYWIDTH = 15;
 let clients;
 let food;
 
-var socket = io("http://localhost:3000");
+var socket = io("http://silvanknecht.ch");
 socket.on("connect", function () {
   console.log("Connected to Server!");
 });
@@ -29,22 +29,24 @@ setInterval(function () {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
     ctx.stroke();
+    let height = 25
 
     for (let c of clients) {
-      drawBody(c.snake.body);
+      drawBody(c.snake.body,c.color);
+      ctx.strokeStyle = c.color;
+      ctx.font = "16px Verdana";
+      ctx.strokeText(c.name + ": " + c.snake.score, WIDTH - 200, height);
+      height += 25;
     }
 
-    drawScore(clients);
+
   }
   if (food.x !== null) drawFood();
 }, 10);
 
 function drawBody(body, color) {
   for (let [i, bp] of body.entries()) {
-    let {
-      x,
-      y
-    } = bp;
+    let { x, y } = bp;
 
     //ctx.strokeStyle = "red";
     ctx.fillStyle = color;
@@ -57,12 +59,6 @@ function drawBody(body, color) {
   }
 }
 
-function drawScore(clients) {
-  let score = clients.find(x => x.id === socket.id).snake.score;
-  ctx.strokeStyle = "white";
-  ctx.font = "30px Verdana";
-  ctx.strokeText(score, WIDTH - 50, 50);
-}
 
 socket.on("food", foodS => {
   food = foodS;
