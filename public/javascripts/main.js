@@ -1,5 +1,28 @@
 let url = 'http://silvanknecht.ch/';
 //let url = 'http://localhost:3000/';
+let formOverlay=document.getElementById('overlay');
+let contactForm = document.getElementById('contactForm');
+
+function offline() {
+    formOverlay.style.display = "block";
+    contactForm.classList.add("offline");
+}
+
+function online() {
+    formOverlay.style.display = "none";
+    contactForm.classList.remove("offline");
+}
+(function() {
+
+    window.addEventListener('online', online);
+    window.addEventListener('offline', offline);
+
+    if (!navigator.onLine) {
+        offline();
+    }
+
+ })();
+
 
 let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 document.getElementsByTagName('body')[0].onresize = function () {
@@ -33,7 +56,7 @@ window.onscroll = function () {
 
 
 window.onload = function () {
-// typeWriter();
+    // typeWriter();
 
 
 };
@@ -44,14 +67,12 @@ let i = 0;
 
 function typeWriter() {
     if (i < bachelor.length) {
-      document.getElementById("bachelor").innerHTML += bachelor.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
+        document.getElementById("bachelor").innerHTML += bachelor.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
     }
-  }
+}
 
-  function notBuiltYet(){
-      alert("page under construction");
-  }
-
-
+function notBuiltYet() {
+    alert("page under construction");
+}

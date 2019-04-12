@@ -1,452 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Silvan Knecht</title>
-    <link rel="shortcut icon" href="./images/icons/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./stylesheets/stylesheet.css"
-    />
-  </head>
 
-  <body>
-    <nav id="navbar" class="nav-bg-white">
-      <a class="nav-link nav-link-colored" href="#welcome-section">About</a>
-      <a class="nav-link nav-link-colored" href="#projects">Projects</a>
-      <a class="nav-link nav-link-colored" href="#contact">Contact</a>
-    </nav>
-    <section id="welcome-section">
-      <div id="title-cont" class="welcome-item">
-        <h1 id="name">Silvan Knecht</h1>
-        <p id="bachelor">
-          system engineering - information and communication systems
-        </p>
-        <div id="socials">
-          <a
-            id="profile-link"
-            href="https://github.com/silvanknecht"
-            target="_blank"
-            ><i id="github-icon" class="fab fa-github-square"></i
-          ></a>
-          <a
-            id="profile-link4"
-            href="https://www.linkedin.com/in/silvan-knecht-6259b9134/"
-            target="_blank"
-            ><i id="linkedin-icon" class="fab fa-linkedin"></i
-          ></a>
-          <a
-            id="profile-link2"
-            href="https://www.freecodecamp.org/silvanknecht"
-            target="_blank"
-            ><i id="freecodecamp-icon" class="fab fa-free-code-camp"></i
-          ></a>
-          <a
-            id="profile-link3"
-            href="https://twitter.com/SBKnecht"
-            target="_blank"
-            ><i id="twitter-icon" class="fab fa-twitter-square"></i
-          ></a>
-        </div>
-      </div>
-      <img
-        id="myPicture"
-        class="welcome-item"
-        src="images/silvanknecht.jpg"
-        alt="Silvan Knecht"
-      />
-    </section>
-    <section id="projects" class="anchor">
-      <h1>Projects</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Silvan Knecht</title>
+  <link rel="shortcut icon" href="./images/icons/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/stylesheet.css" />
+</head>
 
-      <div id="project-cont">
-        <div class="project-tile">
-          <a href="#" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/nodeAuth.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/nodeAuth.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/nodeAuth.jpg"
-                alt="node Auth"
-                onclick="alert('No deployment yet, check out github for the code!')"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">
-              NodeJs OAuth<a
-                href="https://github.com/silvanknecht/nodejs_authentication"
-                target="_blank"
-                ><i class="fab fa-github-square"></i
-              ></a>
-            </h1>
-            <p class="tile-description">
-              A backend template with local, google, facebook and github
-              authentication
-            </p>
-            <p class="project-status" style="color:red;">In progress...</p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/javascript.jpg"
-                alt="javascript"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/nodejs.jpg"
-                alt="NodeJs"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/mongodb.jpg"
-                alt="mongodb"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="project-tile">
-          <a href="https://jklfitbuddy.herokuapp.com" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/jklfitbuddy.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/jklfitbuddy.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/jklfitbuddy.jpg"
-                alt="jklfitbuddy"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">
-              JKL Fitbuddy<a
-                href="https://github.com/silvanknecht/JKL_Fitbuddy"
-                target="_blank"
-                ><i class="fab fa-github-square"></i
-              ></a>
-            </h1>
-            <p class="tile-description">
-              A webapp to create and join sport events.
-            </p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/html-css-javascript.jpg"
-                alt="css3 html5 js"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/leaflet.jpg"
-                alt="Leaflet"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/bootstrap.jpg"
-                alt="bootstrap"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/play.jpg"
-                alt="Play Framework"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="project-tile">
-          <a href="https://jkl2dolist.herokuapp.com" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/jkl2dolist.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/jkl2dolist.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/jkl2dolist.jpg"
-                alt="jkl2dolist"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">
-              JKL 2DoList<a
-                href="https://github.com/silvanknecht/JKL_2DoList"
-                target="_blank"
-                ><i class="fab fa-github-square"></i
-              ></a>
-            </h1>
-            <p class="tile-description">
-              A progressive webapp to organize tasks.
-            </p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/html-css-javascript.jpg"
-                alt="css3 html5 js"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/bootstrap.jpg"
-                alt="bootstrap"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/nodejs.jpg"
-                alt="node.js"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="project-tile">
-          <a href="https://jklearnapp.herokuapp.com" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/jklearnapp.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/jklearnapp.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/jklearnapp.jpg"
-                alt="jkllearnapp"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">
-              JK Learnapp<a
-                href="https://github.com/silvanknecht/hausarbeit_webapp"
-                target="_blank"
-                ><i class="fab fa-github-square"></i
-              ></a>
-            </h1>
-            <p class="tile-description">
-              A webapp to create and study flashcards.
-            </p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/html-css-javascript.jpg"
-                alt="css3 html5 js"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/bootstrap.jpg"
-                alt="bootstrap"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/play.jpg"
-                alt="Play Framework"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="project-tile">
-          <a href="https://jkluxery.herokuapp.com" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/jkluxery.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/jkluxery.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/jkluxery.jpg"
-                alt="jklluxery"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">
-              JK Luxery<a
-                href="https://github.com/silvanknecht/Webshop_JKLuxery"
-                target="_blank"
-                ><i class="fab fa-github-square"></i
-              ></a>
-            </h1>
-            <p class="tile-description">A webshop for luxury vehicles.</p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/html.jpg"
-                alt="html5"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/css.jpg"
-                alt="css3"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/javascript.jpg"
-                alt="javascript"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/bootstrap.jpg"
-                alt="bootstrap"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="project-tile">
-          <a href="https://codepen.io/enjoymrban/full/aPRPPb" target="_blank">
-            <picture>
-              <source
-                srcset="./images/projects/fcclandingpage.webp"
-                type="image/webp"
-              />
-              <source
-                srcset="./images/projects/fcclandingpage.jpg"
-                type="image/jpeg"
-              />
-              <img
-                class="tile-img"
-                src="./images/projects/fcclandingpage.jpg"
-                alt="fcclandingpage"
-              />
-            </picture>
-          </a>
-          <div class="tile-info">
-            <h1 class="tile-title">FCC Landing Page</h1>
-            <p class="tile-description">A product landing page.</p>
-            <div class="tile-tech">
-              <img
-                class="tech-icon"
-                src="./images/technologies/html-css-javascript.jpg"
-                alt="css3 html5 js"
-              />
-              <img
-                class="tech-icon"
-                src="./images/technologies/bootstrap.jpg"
-                alt="bootstrap"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="anchor">
-      <h1>Contact</h1>
-      <p>
-        Use this form if you want to send me a message. I will answer your
-        request as fast as possible!
+<body>
+  <nav id="navbar" class="nav-bg-white">
+    <a class="nav-link nav-link-colored" href="#welcome-section">About</a>
+    <a class="nav-link nav-link-colored" href="#projects">Projects</a>
+    <a class="nav-link nav-link-colored" href="#contact">Contact</a>
+  </nav>
+  <section id="welcome-section">
+    <div id="title-cont" class="welcome-item">
+      <h1 id="name">Silvan Knecht</h1>
+      <p id="bachelor">
+        system engineering - information and communication systems
       </p>
-      <form id="contactForm" onsubmit="return false">
-        <div class="form-field">
-          <label id="contactNameLabel" for="contactName">Name:</label>
-          <input
-            id="contactName"
-            type="text"
-            name="contactName"
-            minlength="3"
-            maxlength="20"
-            oninvalid="formFeedback(false)"
-            required
-          />
-        </div>
-        <div class="form-field">
-          <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
-          <input
-            id="contactEmail"
-            type="email"
-            name="contactEmail"
-            oninvalid="formFeedback(false)"
-            required
-          />
-        </div>
-        <div class="form-field">
-          <label id="contactMessageLabel" for="contactMessage">Message:</label>
-          <textarea
-            id="contactMessage"
-            type="text"
-            name="contactMessage"
-            minlength="10"
-            maxlength="500"
-            oninvalid="formFeedback(false)"
-            required
-          ></textarea>
-        </div>
-        <button
-          id="contactFormButton"
-          class=""
-          type="submit"
-          name="contactFormButton"
-          onclick="openCaptchaModal()"
-        >
-          <b>Send</b>
-        </button>
-      </form>
-    </section>
-    <footer>
-      <p>2019 - Silvan Knecht</p>
-    </footer>
+      <div id="socials">
+        <a id="profile-link" href="https://github.com/silvanknecht" target="_blank"><i id="github-icon"
+            class="fab fa-github-square"></i></a>
+        <a id="profile-link4" href="https://www.linkedin.com/in/silvan-knecht-6259b9134/" target="_blank"><i
+            id="linkedin-icon" class="fab fa-linkedin"></i></a>
+        <a id="profile-link2" href="https://www.freecodecamp.org/silvanknecht" target="_blank"><i id="freecodecamp-icon"
+            class="fab fa-free-code-camp"></i></a>
+        <a id="profile-link3" href="https://twitter.com/SBKnecht" target="_blank"><i id="twitter-icon"
+            class="fab fa-twitter-square"></i></a>
+      </div>
+    </div>
+    <img id="myPicture" class="welcome-item" src="images/silvanknecht.jpg" alt="Silvan Knecht" />
+  </section>
+  <section id="projects" class="anchor">
+    <h1>Projects</h1>
 
-    <div id="captchaModal" class="modal">
-      <!-- Captcha Modal -->
-      <div class="modal-content">
-        <!-- <span class="close">&times;</span> -->
-        <div
-          class="g-recaptcha"
-          data-callback="recaptcha_callback"
-          data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"
-        ></div>
+    <div id="project-cont">
+      <div class="project-tile">
+        <a href="#" target="_blank">
+          <picture>
+            <source srcset="./images/projects/nodeAuth.webp" type="image/webp" />
+            <source srcset="./images/projects/nodeAuth.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/nodeAuth.jpg" alt="node Auth"
+              onclick="alert('No deployment yet, check out github for the code!')" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">
+            NodeJs OAuth<a href="https://github.com/silvanknecht/nodejs_authentication" target="_blank"><i
+                class="fab fa-github-square"></i></a>
+          </h1>
+          <p class="tile-description">
+            A backend template with local, google, facebook and github
+            authentication
+          </p>
+          <p class="project-status" style="color:red;">In progress...</p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/javascript.jpg" alt="javascript" />
+            <img class="tech-icon" src="./images/technologies/nodejs.jpg" alt="NodeJs" />
+            <img class="tech-icon" src="./images/technologies/mongodb.jpg" alt="mongodb" />
+          </div>
+        </div>
+      </div>
+      <div class="project-tile">
+        <a href="https://jklfitbuddy.herokuapp.com" target="_blank">
+          <picture>
+            <source srcset="./images/projects/jklfitbuddy.webp" type="image/webp" />
+            <source srcset="./images/projects/jklfitbuddy.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/jklfitbuddy.jpg" alt="jklfitbuddy" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">
+            JKL Fitbuddy<a href="https://github.com/silvanknecht/JKL_Fitbuddy" target="_blank"><i
+                class="fab fa-github-square"></i></a>
+          </h1>
+          <p class="tile-description">
+            A webapp to create and join sport events.
+          </p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/html-css-javascript.jpg" alt="css3 html5 js" />
+            <img class="tech-icon" src="./images/technologies/leaflet.jpg" alt="Leaflet" />
+            <img class="tech-icon" src="./images/technologies/bootstrap.jpg" alt="bootstrap" />
+            <img class="tech-icon" src="./images/technologies/play.jpg" alt="Play Framework" />
+          </div>
+        </div>
+      </div>
+      <div class="project-tile">
+        <a href="https://jkl2dolist.herokuapp.com" target="_blank">
+          <picture>
+            <source srcset="./images/projects/jkl2dolist.webp" type="image/webp" />
+            <source srcset="./images/projects/jkl2dolist.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/jkl2dolist.jpg" alt="jkl2dolist" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">
+            JKL 2DoList<a href="https://github.com/silvanknecht/JKL_2DoList" target="_blank"><i
+                class="fab fa-github-square"></i></a>
+          </h1>
+          <p class="tile-description">
+            A progressive webapp to organize tasks.
+          </p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/html-css-javascript.jpg" alt="css3 html5 js" />
+            <img class="tech-icon" src="./images/technologies/bootstrap.jpg" alt="bootstrap" />
+            <img class="tech-icon" src="./images/technologies/nodejs.jpg" alt="node.js" />
+          </div>
+        </div>
+      </div>
+      <div class="project-tile">
+        <a href="https://jklearnapp.herokuapp.com" target="_blank">
+          <picture>
+            <source srcset="./images/projects/jklearnapp.webp" type="image/webp" />
+            <source srcset="./images/projects/jklearnapp.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/jklearnapp.jpg" alt="jkllearnapp" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">
+            JK Learnapp<a href="https://github.com/silvanknecht/hausarbeit_webapp" target="_blank"><i
+                class="fab fa-github-square"></i></a>
+          </h1>
+          <p class="tile-description">
+            A webapp to create and study flashcards.
+          </p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/html-css-javascript.jpg" alt="css3 html5 js" />
+            <img class="tech-icon" src="./images/technologies/bootstrap.jpg" alt="bootstrap" />
+            <img class="tech-icon" src="./images/technologies/play.jpg" alt="Play Framework" />
+          </div>
+        </div>
+      </div>
+      <div class="project-tile">
+        <a href="https://jkluxery.herokuapp.com" target="_blank">
+          <picture>
+            <source srcset="./images/projects/jkluxery.webp" type="image/webp" />
+            <source srcset="./images/projects/jkluxery.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/jkluxery.jpg" alt="jklluxery" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">
+            JK Luxery<a href="https://github.com/silvanknecht/Webshop_JKLuxery" target="_blank"><i
+                class="fab fa-github-square"></i></a>
+          </h1>
+          <p class="tile-description">A webshop for luxury vehicles.</p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/html.jpg" alt="html5" />
+            <img class="tech-icon" src="./images/technologies/css.jpg" alt="css3" />
+            <img class="tech-icon" src="./images/technologies/javascript.jpg" alt="javascript" />
+            <img class="tech-icon" src="./images/technologies/bootstrap.jpg" alt="bootstrap" />
+          </div>
+        </div>
+      </div>
+      <div class="project-tile">
+        <a href="https://codepen.io/enjoymrban/full/aPRPPb" target="_blank">
+          <picture>
+            <source srcset="./images/projects/fcclandingpage.webp" type="image/webp" />
+            <source srcset="./images/projects/fcclandingpage.jpg" type="image/jpeg" />
+            <img class="tile-img" src="./images/projects/fcclandingpage.jpg" alt="fcclandingpage" />
+          </picture>
+        </a>
+        <div class="tile-info">
+          <h1 class="tile-title">FCC Landing Page</h1>
+          <p class="tile-description">A product landing page.</p>
+          <div class="tile-tech">
+            <img class="tech-icon" src="./images/technologies/html-css-javascript.jpg" alt="css3 html5 js" />
+            <img class="tech-icon" src="./images/technologies/bootstrap.jpg" alt="bootstrap" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="anchor">
+    <h1>Contact</h1>
+    <p>
+      Use this form if you want to send me a message. I will answer your
+      request as fast as possible!
+    </p>
+    <div id="container">
+      <div id="overlay">
+        Text Overlay
+      </div>
+      <div id="base">
+        <form id="contactForm" onsubmit="return false">
+          <div class="form-field">
+            <label id="contactNameLabel" for="contactName">Name:</label>
+            <input id="contactName" type="text" name="contactName" minlength="3" maxlength="20"
+              oninvalid="formFeedback(false)" required />
+          </div>
+          <div class="form-field">
+            <label id="contactEmailLabel" for="contactEmail">E-Mail:</label>
+            <input id="contactEmail" type="email" name="contactEmail" oninvalid="formFeedback(false)" required />
+          </div>
+          <div class="form-field">
+            <label id="contactMessageLabel" for="contactMessage">Message:</label>
+            <textarea id="contactMessage" type="text" name="contactMessage" minlength="10" maxlength="500"
+              oninvalid="formFeedback(false)" required></textarea>
+          </div>
+          <button id="contactFormButton" class="" type="submit" name="contactFormButton" onclick="openCaptchaModal()">
+            <b>Send</b>
+          </button>
+        </form>
       </div>
     </div>
 
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .then(function(registration) {
-            console.log(
-              "ServiceWorker registration successful with scope: ",
-              registration.scope
-            );
-          })
-          .catch(function(err) {
-            console.log("ServiceWorker registration faied: ", err);
-          });
-      }
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="./javascripts/main.js"></script>
-    <script src="./javascripts/mail.js"></script>
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
-      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </section>
+
+  <footer>
+    <p>2019 - Silvan Knecht</p>
+  </footer>
+
+  <div id="captchaModal" class="modal">
+    <!-- Captcha Modal -->
+    <div class="modal-content">
+      <!-- <span class="close">&times;</span> -->
+      <div class="g-recaptcha" data-callback="recaptcha_callback"
+        data-sitekey="6LdicZQUAAAAADCQkIo3jEo6jXGAnXLItgbYSzU-"></div>
+    </div>
+  </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("./sw.js")
+        .then(function (registration) {
+          console.log(
+            "ServiceWorker registration successful with scope: ",
+            registration.scope
+          );
+        })
+        .catch(function (err) {
+          console.log("ServiceWorker registration faied: ", err);
+        });
+    }
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="./javascripts/main.js"></script>
+  <script src="./javascripts/mail.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>

@@ -63,7 +63,7 @@ nav a {
 #welcome-section {
     height: 100%;
     background-color: rgb(27, 55, 105);
-    background-image:url('../images/welcome-background/screen2.JPG');
+    background-image: url('../images/welcome-background/screen2.JPG');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -110,6 +110,7 @@ nav a {
 #socials a {
     color: white;
 }
+
 #welcome-section #github-icon,
 #welcome-section #freecodecamp-icon,
 #welcome-section #twitter-icon,
@@ -218,9 +219,33 @@ h1 a {
     margin-right: 5px;
 }
 
-/* ABOUT */
-#about {
-    display: none;
+/*  KONTAKT */
+
+#contact {
+    margin-bottom: 60px;
+}
+
+#container {
+    height: 219px;
+    position: relative;
+}
+
+#overlay {
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: red;
+    font-size: 40px;
+    z-index: 10;
+}
+
+#base {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 form {
@@ -230,7 +255,15 @@ form {
     color: white;
 }
 
-/*  KONTAKT */
+.offline {
+    box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+    filter: blur(10px);
+}
+
+#overlay {
+    display: none;
+}
+
 .form-field {
     display: flex;
     margin: 5px 0 5px 0;
@@ -261,6 +294,9 @@ form button:active {
 
     transform: scale(1.005);
 }
+
+
+
 
 .formSuccess {
     animation-name: color_success;
@@ -308,20 +344,28 @@ form button:active {
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
 
-  /* Modal Content/Box */
-  .modal-content {
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     position: absolute;
     left: 50%;
@@ -329,28 +373,28 @@ form button:active {
     top: 50%;
     margin-top: -60px;
     padding: 20px 15px 20px 15px;
-  }
+}
 
-  div.g-recaptcha {
+div.g-recaptcha {
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  /* The Close Button */
-  .close {
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 
 /* FOOTER */
@@ -440,14 +484,15 @@ footer p {
     }
 
 }
-@media screen and (max-width: 1477px){
+
+@media screen and (max-width: 1477px) {
     .anchor {
         max-width: 940px;
 
     }
 }
 
-@media screen and (max-width: 1156px){
+@media screen and (max-width: 1156px) {
     .anchor {
         max-width: 620px;
 
@@ -489,5 +534,3 @@ footer p {
         max-width: 246px;
     }
 }
-
-
