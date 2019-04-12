@@ -7,7 +7,7 @@ const BODYWIDTH = 15;
 let clients;
 let food;
 
-var socket = io("http://silvanknecht.ch");
+var socket = io("http://localhost:3000");
 socket.on("connect", function () {
   console.log("Connected to Server!");
 });
@@ -41,7 +41,7 @@ setInterval(function () {
 
 
   }
-  if (food.x !== null) drawFood();
+  if (food !== undefined) drawFood();
 }, 10);
 
 function drawBody(body, color) {
