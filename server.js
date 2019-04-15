@@ -5,6 +5,7 @@ const app = express();
 const path = require("path");
 const compression = require("compression");
 const server = require("http").createServer(app);
+const https = require("https");
 
 const HEIGHT = 600;
 const WIDTH = 600;
@@ -186,6 +187,7 @@ setInterval(function() {
   io.emit("food", food);
 }, 100);
 
+
 // middlewares
 app.use(express.json());
 app.use(
@@ -196,6 +198,26 @@ app.use(
 app.use(compression());
 
 app.use(express.static("public"));
+
+// Certificate
+const privateKey = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/privkey.pem",
+  "utf8"
+);
+const certificate = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/cert.pem",
+  "utf8"
+);
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/chain.pem",
+  "utf8"
+);
+
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
 // index
 app.get("/", function(req, res) {
@@ -222,7 +244,13 @@ app.get("/snake", function(req, res) {
 app.use("/mail", mail);
 
 // add the router
-server.listen(process.env.port || 3000);
-console.log("Running at Port 3000");
+module.exports = app;
 
-module.exports.server = server;
+app.listen(process.env.port || 3000, function() {
+  console.log("Running at Port 3000");
+});
+
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(3001, () => {
+  console.log("HTTPS Server running on port 443");
+});
