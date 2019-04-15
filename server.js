@@ -3,6 +3,8 @@ const mail = require("./routes/mail");
 const fs = require("fs");
 const app = express();
 const path = require("path");
+const https = require("https");
+const http = require("http");
 const compression = require("compression");
 
 // middlewares
@@ -15,6 +17,26 @@ app.use(
 app.use(compression());
 
 app.use(express.static("public"));
+
+// Certificate
+const privateKey = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/privkey.pem",
+  "utf8"
+);
+const certificate = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/cert.pem",
+  "utf8"
+);
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/yourdomain.com/chain.pem",
+  "utf8"
+);
+
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
 // index
 app.get("/", function(req, res) {
@@ -39,8 +61,11 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
-if (require.main === module) {
-  app.listen(process.env.port || 3000, function() {
-    console.log("Running at Port 3000");
-  });
-}
+app.listen(process.env.port || 3000, function() {
+  console.log("Running at Port 3000");
+});
+
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(3001, () => {
+  console.log("HTTPS Server running on port 443");
+});
