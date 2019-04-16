@@ -5,7 +5,7 @@ const HEIGHT = 600;
 const BODYHIGHT = 15;
 const BODYWIDTH = 15;
 
-var socket = io("http://silvanknecht.ch");
+var socket = io("https://silvanknecht.ch");
 socket.on("connect", function() {
   console.log("Connected to Server!");
 });
