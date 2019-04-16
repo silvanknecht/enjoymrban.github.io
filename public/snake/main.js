@@ -4,13 +4,15 @@ const WIDTH = 600;
 const HEIGHT = 600;
 const BODYHIGHT = 15;
 const BODYWIDTH = 15;
+let clients;
+let food;
 
 var socket = io("https://silvanknecht.ch");
 socket.on("connect", function() {
   console.log("Connected to Server!");
 });
-socket.on("event", function(data) {});
-socket.on("disconnect", function() {
+socket.on("event", function (data) {});
+socket.on("disconnect", function () {
   socket.close();
 });
 
@@ -18,27 +20,29 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, WIDTH, HEIGHT);
 ctx.stroke();
 
-socket.on("move", clients => {
-  ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, WIDTH, HEIGHT);
-  ctx.stroke();
-  let height = 25;
+socket.on("move", clientsS => {
+  clients = clientsS;
+});
 
-  for (let c of clients) {
-    drawBody(c.snake.body, c.color);
-    ctx.strokeStyle = c.color;
-    ctx.font = "16px Verdana";
-    ctx.strokeText(c.name + ": " + c.snake.score, WIDTH - 200, height);
-    height += 25;
+setInterval(function () {
+  if (clients !== undefined) {
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    ctx.stroke();
+    let height = 25
+
+    for (let c of clients) {
+      drawBody(c.snake.body,c.color);
+      ctx.strokeStyle = c.color;
+      ctx.font = "16px Verdana";
+      ctx.strokeText(c.name + ": " + c.snake.score, WIDTH - 200, height);
+      height += 25;
+    }
+
+
   }
-
-  //if (gameRunning) move();
-  //eat();
-});
-
-socket.on("food", food => {
-  if (food.x !== null) drawFood(food);
-});
+  if (food !== undefined) drawFood();
+}, 10);
 
 function drawBody(body, color) {
   for (let [i, bp] of body.entries()) {
@@ -55,12 +59,18 @@ function drawBody(body, color) {
   }
 }
 
-function drawFood(food) {
+
+socket.on("food", foodS => {
+  food = foodS;
+});
+
+
+function drawFood() {
   ctx.strokeStyle = "red";
   ctx.strokeRect(food.x, food.y, BODYHIGHT, BODYWIDTH);
 }
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
   switch (e.keyCode) {
     case 37: // left
       socket.emit("changeDirection", "left");
