@@ -4,8 +4,7 @@ const fs = require("fs");
 const app = express();
 const path = require("path");
 const compression = require("compression");
-const server = require("http").createServer(app);
-const https = require("https");
+const server = require("https").createServer(credentials, app);
 
 const HEIGHT = 600;
 const WIDTH = 600;
@@ -19,7 +18,7 @@ let food = {
 };
 
 let clients = [];
-const io;
+const io = require("socket.io")(server);
 io.on("connection", client => {
   console.log("connected to server!");
   let newClient = {
@@ -251,13 +250,7 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
-server.listen(process.env.port || 3000, function() {
-  io = require("socket.io")(server);
-  console.log("Running at Port 3000");
+server.listen(process.env.port || 3001, function() {
+  console.log("HTTPS - Server running at Port 3001");
 });
 
-const httpsServer = https.createServer(credentials, app);
-httpsServer.listen(3001, () => {
-  io = require("socket.io")(httpsServer);
-  console.log("HTTPS Server running on port 443");
-});
