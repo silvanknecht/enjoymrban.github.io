@@ -4,6 +4,7 @@ const fs = require("fs");
 const app = express();
 const path = require("path");
 const compression = require("compression");
+const httpServer = require("http").createServer(app);
 
 // Certificate
 const privateKey = fs.readFileSync(
@@ -72,8 +73,12 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
-const server = require("https").createServer(credentials, app);
-server.listen(process.env.port || 3001, function() {
+const httpsServer = require("https").createServer(credentials, app);
+httpsServer.listen(process.env.port || 3001, function() {
+  console.log("HTTPS - httpsServer running at Port 3001");
+});
+
+httpServer.listen(process.env.port || 3001, function() {
   console.log("HTTPS - Server running at Port 3001");
 });
 
@@ -92,9 +97,9 @@ let food = {
 };
 
 let clients = [];
-const io = require("socket.io")(server);
+const io = require("socket.io")(httpsServer);
 io.on("connection", client => {
-  console.log("connected to server!");
+  console.log("connected to snake Server!");
   let newClient = {
     id: client.id,
     snake: new Snake(),
