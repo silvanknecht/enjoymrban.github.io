@@ -78,8 +78,8 @@ httpsServer.listen(process.env.port || 3001, function() {
   console.log("HTTPS - httpsServer running at Port 3001");
 });
 
-httpServer.listen(process.env.port || 3001, function() {
-  console.log("HTTPS - Server running at Port 3001");
+httpServer.listen(process.env.port || 3000, function() {
+  console.log("HTTP - Server running at Port 3000");
 });
 
 
