@@ -5,7 +5,7 @@ const app = express();
 const path = require("path");
 const compression = require("compression");
 const server = require("http").createServer(app);
-const https = require("https");
+const https = require("https").createServer(app);
 
 const HEIGHT = 600;
 const WIDTH = 600;
@@ -246,7 +246,7 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
-app.listen(process.env.port || 3000, function() {
+server.listen(process.env.port || 3000, function() {
   console.log("Running at Port 3000");
 });
 
