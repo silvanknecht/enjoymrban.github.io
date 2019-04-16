@@ -1,4 +1,3 @@
-const contactForm = document.getElementById("contactForm");
 const contactFormButton = document.getElementById("contactFormButton");
 const contactName = document.getElementById("contactName");
 const contactEmail = document.getElementById("contactEmail");
