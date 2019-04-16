@@ -5,7 +5,7 @@ const app = express();
 const path = require("path");
 const compression = require("compression");
 const server = require("http").createServer(app);
-const https = require("https").createServer(app);
+const https = require("https");
 
 const HEIGHT = 600;
 const WIDTH = 600;
