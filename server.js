@@ -5,7 +5,81 @@ const app = express();
 const path = require("path");
 const compression = require("compression");
 
+// Certificate
+const privateKey = fs.readFileSync(
+  "/etc/letsencrypt/live/silvanknecht.ch/privkey.pem",
+  "utf8"
+);
+const certificate = fs.readFileSync(
+  "/etc/letsencrypt/live/silvanknecht.ch/cert.pem",
+  "utf8"
+);
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/silvanknecht.ch/chain.pem",
+  "utf8"
+);
 
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
+
+
+// middlewares
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+);
+app.use(compression());
+
+app.use(express.static("public"));
+app.use(function(req, res, next) {
+  if (!req.secure) {
+    return res.redirect(["https://", req.get("Host"), req.url].join(""));
+  }
+  next();
+});
+
+
+
+// index
+app.get("/", function(req, res) {
+  // let filePath = `/home/pi/Documents/data/ipadresses.txt`;
+  // let stats = fs.statSync(filePath);
+  // if (stats.size < 5000000) {
+  //   fs.appendFile(filePath, req.connection.remoteAddress + ", ", function (err, data) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+
+  //   });
+  // } else {
+  //   console.log("save file full");
+  // }
+  res.sendFile(path.join(__dirname + "/index.html"));
+});
+
+app.get("/snake", function(req, res) {
+  res.sendFile(path.join("./snake/index.html"));
+});
+
+// routes
+app.use("/mail", mail);
+
+// add the router
+module.exports = app;
+
+const server = require("https").createServer(credentials, app);
+server.listen(process.env.port || 3001, function() {
+  console.log("HTTPS - Server running at Port 3001");
+});
+
+
+
+/** ****************************************************************** */
 const HEIGHT = 600;
 const WIDTH = 600;
 const BODYHIGHT = 15;
@@ -186,72 +260,4 @@ setInterval(function() {
   io.emit("food", food);
 }, 100);
 
-// middlewares
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true
-  })
-);
-app.use(compression());
-
-app.use(express.static("public"));
-app.use(function(req, res, next) {
-  if (!req.secure) {
-    return res.redirect(["https://", req.get("Host"), req.url].join(""));
-  }
-  next();
-});
-
-// Certificate
-const privateKey = fs.readFileSync(
-  "/etc/letsencrypt/live/silvanknecht.ch/privkey.pem",
-  "utf8"
-);
-const certificate = fs.readFileSync(
-  "/etc/letsencrypt/live/silvanknecht.ch/cert.pem",
-  "utf8"
-);
-const ca = fs.readFileSync(
-  "/etc/letsencrypt/live/silvanknecht.ch/chain.pem",
-  "utf8"
-);
-
-const credentials = {
-  key: privateKey,
-  cert: certificate,
-  ca: ca
-};
-
-// index
-app.get("/", function(req, res) {
-  // let filePath = `/home/pi/Documents/data/ipadresses.txt`;
-  // let stats = fs.statSync(filePath);
-  // if (stats.size < 5000000) {
-  //   fs.appendFile(filePath, req.connection.remoteAddress + ", ", function (err, data) {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-
-  //   });
-  // } else {
-  //   console.log("save file full");
-  // }
-  res.sendFile(path.join(__dirname + "/index.html"));
-});
-
-app.get("/snake", function(req, res) {
-  res.sendFile(path.join("./snake/index.html"));
-});
-
-// routes
-app.use("/mail", mail);
-
-// add the router
-module.exports = app;
-
-const server = require("https").createServer(credentials, app);
-server.listen(process.env.port || 3001, function() {
-  console.log("HTTPS - Server running at Port 3001");
-});
 
