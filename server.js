@@ -19,7 +19,7 @@ let food = {
 };
 
 let clients = [];
-const io = require("socket.io")(server);
+const io;
 io.on("connection", client => {
   console.log("connected to server!");
   let newClient = {
@@ -252,10 +252,12 @@ app.use("/mail", mail);
 module.exports = app;
 
 server.listen(process.env.port || 3000, function() {
+  io = require("socket.io")(server);
   console.log("Running at Port 3000");
 });
 
 const httpsServer = https.createServer(credentials, app);
 httpsServer.listen(3001, () => {
+  io = require("socket.io")(httpsServer);
   console.log("HTTPS Server running on port 443");
 });
