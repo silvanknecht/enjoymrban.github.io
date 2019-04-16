@@ -4,7 +4,7 @@ const fs = require("fs");
 const app = express();
 const path = require("path");
 const compression = require("compression");
-const server = require("https").createServer(credentials, app);
+
 
 const HEIGHT = 600;
 const WIDTH = 600;
@@ -250,6 +250,7 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
+const server = require("https").createServer(credentials, app);
 server.listen(process.env.port || 3001, function() {
   console.log("HTTPS - Server running at Port 3001");
 });
