@@ -1,5 +1,4 @@
-let url = 'https://silvanknecht.ch/';
-//let url = 'http://localhost:3000/';
+let url = window.location.origin +"/";
 let formOverlay=document.getElementById('overlay');
 let contactForm = document.getElementById('contactForm');
 

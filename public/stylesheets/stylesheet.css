@@ -233,6 +233,7 @@ h1 a {
 #overlay {
     height: 100%;
     position: absolute;
+    text-align: center;
     top: 50px;
     left: 50px;
     color: red;
@@ -446,6 +447,10 @@ footer p {
     /* contact */
     .form-field {
         flex-direction: column;
+    }
+
+    #contact {
+        margin-bottom: 120px;
     }
 
 

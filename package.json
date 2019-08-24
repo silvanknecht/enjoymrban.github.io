@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/silvanknecht/silvanknecht.github.io/issues"
   },
-  "homepage": "https://github.com/silvanknecht/silvanknecht.github.io#readme"
+  "homepage": "https://github.com/silvanknecht/silvanknecht.github.io#readme",
+  "devDependencies": {
+    "eslint": "^6.2.2"
+  }
 }

@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 const gmailAccount = require('../configuration/gmailAccount');
 const {
-  secret
-} = require('../configuration/recaptcha')
+    secret
+} = require('../configuration/recaptcha');
 const fetch = require('node-fetch');
 
 const transporter = nodemailer.createTransport({
@@ -20,14 +20,14 @@ const transporter = nodemailer.createTransport({
 module.exports = {
   send: async function (req, res) {
     console.log(req.body);
-    let {
+    const {
       contactName,
       contactEmail,
       contactMessage,
       token
     } = req.body;
 
-    let message = {
+    const message = {
       from: "knecht.hans@gmail.com",
       to: "knecht.silvan@gmail.com",
       subject: "KONAKTFORMULAR : silvanknecht.ch",
@@ -64,7 +64,7 @@ module.exports = {
             if (err) {
               console.log('Email NOT sent!', err);
             } else {
-              console.log("Email sent")
+                console.log("Email sent");
               res.status(200).json("Email sent!");
             }
           });
@@ -72,7 +72,7 @@ module.exports = {
 
       })
       .catch((err) => {
-        console.log(err)
+          console.log(err);
       });
 
   }
