@@ -63,3 +63,6 @@ typings/
 
 #Others
 configuration/
+
+public/.htaccess
+public/.well-known/

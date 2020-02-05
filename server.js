@@ -5,8 +5,9 @@ const app = express();
 const path = require("path");
 const compression = require("compression");
 const httpServer = require("http").createServer(app);
-
-if (process.env.NODE_ENV === "production") {
+//console.log(process.env.NODE_ENV);
+//if (process.env.NODE_ENV === "production") {
+    console.log("Loading certificates");
     // Certificate
     const privateKey = fs.readFileSync(
         "/etc/letsencrypt/live/silvanknecht.ch/privkey.pem",
@@ -27,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
         ca: ca
     };
 
-}
+//}
 
 
 // middlewares
@@ -41,14 +42,14 @@ app.use(compression());
 
 app.use(express.static("public"));
 
-if (process.env.NODE_ENV === "production") {
+//if (process.env.NODE_ENV === "production") {
     app.use(function (req, res, next) {
         if (!req.secure) {
             return res.redirect(["https://", req.get("Host"), req.url].join(""));
         }
         next();
     });
-}
+//}
 
 
 
@@ -80,12 +81,13 @@ app.use("/mail", mail);
 // add the router
 module.exports = app;
 
-if (process.env.NODE_ENV === "production") {
+//if (process.env.NODE_ENV === "production") {
+    console.log("starting Https sever...");
     const httpsServer = require("https").createServer(credentials, app);
     httpsServer.listen(process.env.port || 3001, function () {
         console.log("HTTPS - httpsServer running at Port 3001");
     });
-}
+//}
 
 httpServer.listen(process.env.port || 3000, function() {
   console.log("HTTP - Server running at Port 3000");
@@ -108,12 +110,12 @@ let food = {
 
 let clients = [];
 let io;
-if (process.env.NODE_ENV === "production") {
-    io = require("socket.io")(httpsServer);
-} else {
+//if (process.env.NODE_ENV === "production") {
+ //   io = require("socket.io")(httpsServer);
+//} else {
     io = require("socket.io")(httpServer);
 
-}
+//}
  
 io.on("connection", client => {
   console.log("connected to snake Server!");
